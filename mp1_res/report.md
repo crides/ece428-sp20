@@ -15,9 +15,13 @@ The source code of this MP is located here: <https://gitlab.engr.illinois.edu/ha
 
 ## Building & Running Instructions
 
-You need to install [Rust](https://rust-lang.org) to be able to build this MP. After cloning the repo, simply run `make`. The built binaries would be located in `target/release/node`.
+You need to install [Rust](https://rust-lang.org) to be able to build this MP. After cloning the repo, simply run `make`. The built binaries would be located in `target/release/node`. Run the binary as specified in the assignment documentation. It will accept a number of nodes running and the port number the current node will listen on.
 
-<!--TODO Protocol designs-->
+## Design of the protocol
+
+The communication protocol between the nodes is based on the ISIS algorithm, using a gRPC library to simplify the marshalling and unmarshalling of the values. Every node is a RPC server, and they all wait for 7 seconds after they start listening on the specified port before connecting to the other nodes.
+
+There are 2 methods defined. The first one is to send out the message, returning the 
 
 ## Graphs
 
